@@ -25,7 +25,7 @@ try
     // this seeding is only for the template to bootstrap the DB and users.
     // in production you will likely want a different approach.
 
-    builder.Services.AddRazorPages();
+    builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
     builder.Services.AddDbContext<ZeniIdentityDbContext>((opt) =>
     {
         opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
