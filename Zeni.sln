@@ -7,7 +7,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B9DF4951-E6B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{C763FD01-28F5-413E-A3DA-CEEBCD38E878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Services.Identity.Api", "Zeni.Services.Identity.Api\Zeni.Services.Identity.Api.csproj", "{C1F69A74-9AF8-49EB-B650-84A1990EFF00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Identity.Api", "Zeni.Services.Identity.Api\Zeni.Services.Identity.Api.csproj", "{C1F69A74-9AF8-49EB-B650-84A1990EFF00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5B4ACC95-829C-4875-88D9-9F0DAF51506E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Api", "Zeni.Services.Category.Api\Zeni.Services.Category.Api.csproj", "{F1F313D8-7ADD-441F-9387-53A926B51824}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Application", "Zeni.Services.Category.Application\Zeni.Services.Category.Application.csproj", "{C3DC25E7-8BB1-485B-8D55-286CF9B545E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Domain", "Zeni.Services.Category.Domain\Zeni.Services.Category.Domain.csproj", "{29266EBD-E982-4664-8F88-3D3858EBEDA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Application.Abstraction", "Zeni.Services.Category.Application.Abstraction\Zeni.Services.Category.Application.Abstraction.csproj", "{657DC43F-27E9-4688-B71D-8EE7C627B4E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{A08B5873-01F5-4E55-9109-11BEDC2D6AA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Persistence", "Zeni.Services.Category.Persistence\Zeni.Services.Category.Persistence.csproj", "{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3CB59DA2-100F-41F7-B53E-1695AC2C1C36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Entity", "Zeni.Infra.Entity\Zeni.Infra.Entity.csproj", "{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "composefiles", "composefiles", "{8423BC1A-E6CB-41E4-8C11-F924978F1045}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\src\elk\docker-compose-elk-apm.yml = ..\..\..\..\..\src\elk\docker-compose-elk-apm.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +42,30 @@ Global
 		{C1F69A74-9AF8-49EB-B650-84A1990EFF00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1F69A74-9AF8-49EB-B650-84A1990EFF00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1F69A74-9AF8-49EB-B650-84A1990EFF00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1F313D8-7ADD-441F-9387-53A926B51824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1F313D8-7ADD-441F-9387-53A926B51824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1F313D8-7ADD-441F-9387-53A926B51824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1F313D8-7ADD-441F-9387-53A926B51824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3DC25E7-8BB1-485B-8D55-286CF9B545E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3DC25E7-8BB1-485B-8D55-286CF9B545E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3DC25E7-8BB1-485B-8D55-286CF9B545E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3DC25E7-8BB1-485B-8D55-286CF9B545E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29266EBD-E982-4664-8F88-3D3858EBEDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29266EBD-E982-4664-8F88-3D3858EBEDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29266EBD-E982-4664-8F88-3D3858EBEDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29266EBD-E982-4664-8F88-3D3858EBEDA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{657DC43F-27E9-4688-B71D-8EE7C627B4E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{657DC43F-27E9-4688-B71D-8EE7C627B4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{657DC43F-27E9-4688-B71D-8EE7C627B4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{657DC43F-27E9-4688-B71D-8EE7C627B4E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -26,6 +73,15 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C763FD01-28F5-413E-A3DA-CEEBCD38E878} = {B9DF4951-E6BA-41E3-A961-A5D55B2EA75D}
 		{C1F69A74-9AF8-49EB-B650-84A1990EFF00} = {C763FD01-28F5-413E-A3DA-CEEBCD38E878}
+		{5B4ACC95-829C-4875-88D9-9F0DAF51506E} = {B9DF4951-E6BA-41E3-A961-A5D55B2EA75D}
+		{F1F313D8-7ADD-441F-9387-53A926B51824} = {A08B5873-01F5-4E55-9109-11BEDC2D6AA7}
+		{C3DC25E7-8BB1-485B-8D55-286CF9B545E8} = {A08B5873-01F5-4E55-9109-11BEDC2D6AA7}
+		{29266EBD-E982-4664-8F88-3D3858EBEDA2} = {A08B5873-01F5-4E55-9109-11BEDC2D6AA7}
+		{657DC43F-27E9-4688-B71D-8EE7C627B4E4} = {A08B5873-01F5-4E55-9109-11BEDC2D6AA7}
+		{A08B5873-01F5-4E55-9109-11BEDC2D6AA7} = {5B4ACC95-829C-4875-88D9-9F0DAF51506E}
+		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD} = {A08B5873-01F5-4E55-9109-11BEDC2D6AA7}
+		{3CB59DA2-100F-41F7-B53E-1695AC2C1C36} = {B9DF4951-E6BA-41E3-A961-A5D55B2EA75D}
+		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D94A7DED-25B9-4484-A453-046F71C50628}
