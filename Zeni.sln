@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Entity", "Zeni.I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "composefiles", "composefiles", "{8423BC1A-E6CB-41E4-8C11-F924978F1045}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\src\elk\docker-compose-elk-apm.yml = ..\..\..\..\..\src\elk\docker-compose-elk-apm.yml
+		docker-compose-elk-apm.yml = docker-compose-elk-apm.yml
 	EndProjectSection
 EndProject
 Global
