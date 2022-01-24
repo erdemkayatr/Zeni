@@ -27,10 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Entity", "Zeni.Infra.Entity\Zeni.Infra.Entity.csproj", "{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "composefiles", "composefiles", "{8423BC1A-E6CB-41E4-8C11-F924978F1045}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configs", "configs", "{8423BC1A-E6CB-41E4-8C11-F924978F1045}"
 	ProjectSection(SolutionItems) = preProject
-		docker-compose-elk-apm.yml = docker-compose-elk-apm.yml
+		configs\docker-compose-elk-apm.yml = configs\docker-compose-elk-apm.yml
+		configs\logstash.conf = configs\logstash.conf
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Logging", "Zeni.Infra.Logging\Zeni.Infra.Logging.csproj", "{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +69,10 @@ Global
 		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +89,7 @@ Global
 		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD} = {A08B5873-01F5-4E55-9109-11BEDC2D6AA7}
 		{3CB59DA2-100F-41F7-B53E-1695AC2C1C36} = {B9DF4951-E6BA-41E3-A961-A5D55B2EA75D}
 		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
+		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D94A7DED-25B9-4484-A453-046F71C50628}

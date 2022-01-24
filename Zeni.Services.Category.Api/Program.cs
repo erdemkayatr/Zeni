@@ -1,57 +1,33 @@
-
-
+using RabbitMQ.Client;
 using Serilog;
-using Serilog.AspNetCore;
-using Serilog.Sinks.Elasticsearch;
-using Elastic.Apm.AspNetCore;
-
+using Serilog.Formatting.Json;
+using Serilog.Sinks.RabbitMQ;
+using Serilog.Sinks.RabbitMQ.Sinks.RabbitMQ;
+using Zeni.Infra.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.FromLogContext()
-    .Enrich.WithProperty("Application", "Zeni.Services.Category")
-    .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
-    .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Warning)
-    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(
-        new Uri("http://localhost:9200/"))
-    {
-        AutoRegisterTemplate = true,
-        TemplateName ="serilog-events-teamplate",
-        IndexFormat = "Zeni.Services.Category-log-{0:yyyy.MM.dd}"
-    })
-    .MinimumLevel.Verbose()
-    .CreateLogger();
 
-try
-{
 
-}
-catch (Exception ex)
-{
-
-    Log.Fatal(ex, "Unhandled exception");
-}
-finally
-{
-    Log.Information("Shut Down Complete");
-    Log.CloseAndFlush();
-}
 // Add services to the container.
-
-builder.Services.AddControllers();
+builder.Host.AddZeniLogging(builder.Configuration);
+builder.Services.AddControllers(config=>{
+    config.Filters.Add(new ZeniServiceLoggingActionFilter());
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Elasticsearch(new ElasticsearchSinkOptions(
-        new Uri("http://localhost:9200/"))
-{
-    AutoRegisterTemplate = true,
-    TemplateName = "serilog-events-teamplate",
-    IndexFormat = "Zeni.Services.Category-log-{0:yyyy.MM.dd}"
-}).ReadFrom.Configuration(ctx.Configuration));
+
+//builder.Host.ConfigureLogging((hostcontext, config) => { config.AddSerilog(Log.Logger); }).UseSerilog((context, services, configuration) => configuration.ReadFrom.Configuration(context.Configuration)
+//                    .Enrich.FromLogContext().MinimumLevel.Information()
+//                    .WriteTo.RabbitMQ((clientConfiguration, sinkConfiguration) =>
+//                    {
+//                        clientConfiguration.From(config);
+//                        sinkConfiguration.TextFormatter = new JsonFormatter();
+//                    }));
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -59,9 +35,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseSerilogRequestLogging();
 
-app.UseElasticApm(app.Configuration);
+//app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 
