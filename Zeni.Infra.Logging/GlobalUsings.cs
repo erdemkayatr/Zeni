@@ -1,0 +1,12 @@
+﻿global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.Hosting;
+global using Microsoft.Extensions.Logging;
+global using Serilog;
+global using Serilog.Sinks.RabbitMQ;
+global using Serilog.Sinks.RabbitMQ.Sinks.RabbitMQ;
+global using Serilog.Events;
+global using Serilog.Formatting.Json;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Controllers;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Newtonsoft.Json;

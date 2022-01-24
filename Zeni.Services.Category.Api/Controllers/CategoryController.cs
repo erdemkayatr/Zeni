@@ -1,4 +1,6 @@
-﻿namespace Zeni.Services.Category.Api.Controllers
+﻿using Zeni.Infra.Logging;
+
+namespace Zeni.Services.Category.Api.Controllers
 {
     public class CategoryController : CategoryControllerBase
     {
@@ -9,11 +11,18 @@
             _logger = logger;
         }
 
-        [HttpGet("getLog")]
-        public bool GetLog()
+        [HttpPost("getLog")]
+        [ServiceLog(true,true)]
+        public async Task<Deneme> GetLog(Deneme log)
         {
-            _logger.LogError("Trying log");
-            return true;
+            log.Deneme1 = "Response";
+            return log;
         }
+    }
+
+    public class Deneme
+    {
+        public string Deneme1 { get; set; } = "Erdem";
+        public string Deneme2 { get; set; } = "Kaya;";
     }
 }
