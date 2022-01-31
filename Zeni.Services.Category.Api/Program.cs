@@ -1,14 +1,4 @@
-using RabbitMQ.Client;
-using Serilog;
-using Serilog.Formatting.Json;
-using Serilog.Sinks.RabbitMQ;
-using Serilog.Sinks.RabbitMQ.Sinks.RabbitMQ;
-using System.Reflection;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using Zeni.Infra.Ioc;
-using Zeni.Infra.Logging;
-using Zeni.Services.Category.Application;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
