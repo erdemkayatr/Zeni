@@ -3,7 +3,12 @@ using Serilog;
 using Serilog.Formatting.Json;
 using Serilog.Sinks.RabbitMQ;
 using Serilog.Sinks.RabbitMQ.Sinks.RabbitMQ;
+using System.Reflection;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Zeni.Infra.Ioc;
 using Zeni.Infra.Logging;
+using Zeni.Services.Category.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,13 +23,9 @@ builder.Services.AddControllers(config=>{
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Host.ConfigureLogging((hostcontext, config) => { config.AddSerilog(Log.Logger); }).UseSerilog((context, services, configuration) => configuration.ReadFrom.Configuration(context.Configuration)
-//                    .Enrich.FromLogContext().MinimumLevel.Information()
-//                    .WriteTo.RabbitMQ((clientConfiguration, sinkConfiguration) =>
-//                    {
-//                        clientConfiguration.From(config);
-//                        sinkConfiguration.TextFormatter = new JsonFormatter();
-//                    }));
+
+
+builder.Host.UseZeniRegisterServices();
 
 var app = builder.Build();
 

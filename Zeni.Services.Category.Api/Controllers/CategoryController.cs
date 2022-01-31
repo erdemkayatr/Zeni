@@ -1,4 +1,5 @@
 ﻿using Zeni.Infra.Logging;
+using Zeni.Services.Category.Application.Services;
 
 namespace Zeni.Services.Category.Api.Controllers
 {
@@ -6,23 +7,24 @@ namespace Zeni.Services.Category.Api.Controllers
     {
 
         private readonly ILogger<CategoryController> _logger;
-        public CategoryController(ILogger<CategoryController> logger)
+        private readonly ICategoryService _categoryService;
+        public CategoryController(ILogger<CategoryController> logger, ICategoryService categoryService)
         {
             _logger = logger;
+            _categoryService = categoryService;
         }
 
         [HttpPost("getLog")]
         [ServiceLog(true,true)]
-        public async Task<Deneme> GetLog(Deneme log)
+        public async Task<string> GetLog(string log)
         {
-            log.Deneme1 = "Response";
-            return log;
+            return _categoryService.GetCategory(log);
         }
     }
 
-    public class Deneme
-    {
-        public string Deneme1 { get; set; } = "Erdem";
-        public string Deneme2 { get; set; } = "Kaya;";
-    }
+    //public class Deneme
+    //{
+    //    public string Deneme1 { get; set; } = "Erdem";
+    //    public string Deneme2 { get; set; } = "Kaya;";
+    //}
 }

@@ -13,6 +13,7 @@ services:
     - 8200:8200
     networks:
       - zeni_blog_network
+    domainname: apmserver.zeni.com
     command: >
        apm-server -e
          -E apm-server.rum.enabled=true
@@ -44,6 +45,7 @@ services:
     - 9200:9200
     networks:
     - zeni_blog_network
+    domainname: elasticsearch.zeni.com
     healthcheck:
       interval: 20s
       retries: 10
@@ -61,6 +63,7 @@ services:
     - 5601:5601
     networks:
     - zeni_blog_network
+    domainname: kibana.zeni.com
     healthcheck:
       interval: 10s
       retries: 20
@@ -74,6 +77,7 @@ services:
       - "esdata:/usr/share/rabbitmqdata/data"
     networks:
       - zeni_blog_network
+    domainname: rabbitmq.zeni.com
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
