@@ -33,7 +33,6 @@ try
     builder.Services.AddIdentity<ZeniUser, IdentityRole>()
         .AddEntityFrameworkStores<ZeniIdentityDbContext>().AddDefaultTokenProviders();
 
-   
 
     var identityBuilder = builder.Services.AddIdentityServer(opt =>
     {
@@ -86,13 +85,18 @@ try
     {
         MinimumSameSitePolicy = SameSiteMode.Lax
     });
-
+    app.UseCors(x => x
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .SetIsOriginAllowed(origin => true) // allow any origin
+        .AllowCredentials()); // allow credentials
     app.UseHttpsRedirection();
     app.UseStaticFiles();
     app.UseRouting();
     app.UseIdentityServer();
     app.UseAuthorization();
     app.MapRazorPages();
+    
     app.Run();
 }
 catch (Exception ex) when (ex.GetType().Name is not "StopTheHostException") // https://github.com/dotnet/runtime/issues/60600

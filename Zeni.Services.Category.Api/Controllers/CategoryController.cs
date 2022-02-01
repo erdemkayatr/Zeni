@@ -1,5 +1,8 @@
-﻿using Zeni.Infra.Logging;
+﻿using Arch.EntityFrameworkCore.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
+using Zeni.Infra.Logging;
 using Zeni.Services.Category.Application.Services;
+using Zeni.Services.Category.Domain.Entities;
 
 namespace Zeni.Services.Category.Api.Controllers
 {
@@ -7,24 +10,34 @@ namespace Zeni.Services.Category.Api.Controllers
     {
 
         private readonly ILogger<CategoryController> _logger;
-        private readonly ICategoryService _categoryService;
-        public CategoryController(ILogger<CategoryController> logger, ICategoryService categoryService)
+        private readonly IUnitOfWork _unitOfWork;
+        public CategoryController(ILogger<CategoryController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
-            _categoryService = categoryService;
+            _unitOfWork = unitOfWork;
         }
 
         [HttpPost("getLog")]
-        [ServiceLog(true,true)]
+        [ServiceLog(true, true)]
+        [Authorize]
         public async Task<string> GetLog(string log)
         {
-            return _categoryService.GetCategory(log);
+            var categoryRepo = _unitOfWork.GetRepository<Categories>();
+            var isCat = await categoryRepo.GetPagedListAsync();
+            if (isCat.Items.Count < 1)
+            {
+                var cat = new Categories
+                {
+                    CategoryName = "ZeniCategory",
+                    CategoryDescription = "FistCategory Added"
+                };
+                await categoryRepo.InsertAsync(cat);
+                await _unitOfWork.SaveChangesAsync();
+            }
+            var catList = categoryRepo.GetAll();
+
+            return "true";
         }
     }
 
-    //public class Deneme
-    //{
-    //    public string Deneme1 { get; set; } = "Erdem";
-    //    public string Deneme2 { get; set; } = "Kaya;";
-    //}
 }
