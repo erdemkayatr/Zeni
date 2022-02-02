@@ -50,8 +50,6 @@ public class SeedData
                 ClientId="zeni.services.category",
                 ClientSecrets = {new Secret("secret".Sha256())},
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
-                //RedirectUris = { "https://localhost:5000/signin-oidc" },
-                //PostLogoutRedirectUris = { "https://localhost:5000/signout-callback-oidc" },
                 AllowedScopes = new List<string>
                 {
                     IdentityServerConstants.StandardScopes.OpenId,

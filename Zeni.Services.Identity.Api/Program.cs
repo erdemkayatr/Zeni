@@ -50,7 +50,7 @@ try
         .AddOperationalStore(opt =>
         {
             opt.ConfigureDbContext = build => build.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
-                ,sql=>sql.MigrationsAssembly(migrationsAssembly));
+                , sql => sql.MigrationsAssembly(migrationsAssembly));
             opt.EnableTokenCleanup = true;
             opt.TokenCleanupInterval = 3600;
         }).AddConfigurationStore(options =>
@@ -96,7 +96,7 @@ try
     app.UseIdentityServer();
     app.UseAuthorization();
     app.MapRazorPages();
-    
+
     app.Run();
 }
 catch (Exception ex) when (ex.GetType().Name is not "StopTheHostException") // https://github.com/dotnet/runtime/issues/60600

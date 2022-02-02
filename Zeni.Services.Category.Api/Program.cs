@@ -29,39 +29,46 @@ builder.Services.AddDbContext<CategoryDbContext>(opt =>
 
 }).AddUnitOfWork<CategoryDbContext>();
 
-builder.Services.AddAuthentication(options =>
-    {
-        options.DefaultScheme = "cookies";
-        options.DefaultChallengeScheme = "oidc";
-    })
-    .AddCookie("cookies")
-    .AddOpenIdConnect("oidc", options =>
-    {
-        options.Authority = "https://localhost:5001";
-        options.ClientSecret = "secret";
-        options.ClientId = "zeni.services.category";
-        options.MapInboundClaims = false;
-        options.SaveTokens = true;
-        options.Scope.Add("zeni");
-    });
-//.AddOpenIdConnect("oidc", opt =>
-//{
-//    opt.Authority = "https://localhost:5000/";
-//    opt.ClientId = "zeni.services.category";
-//    opt.ClientSecret = "secret";
-//    opt.ResponseType = "access_token";
-//    opt.SaveTokens = true;
-//    opt.Scope.Add("zeni");
-//    opt.Scope.Add("offline_access");
-//});
-builder.Services.AddAuthorization(opt =>
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer(options =>
 {
-    opt.AddPolicy("Admin", policy =>
-    {
-
-        policy.RequireClaim("scope", "zeni");
-    });
+    options.Authority = "http://localhost:5000";
+    options.TokenValidationParameters.ValidateAudience = false;
+    options.RequireHttpsMetadata = false;
 });
+builder.Services.AddAuthorization(options =>
+    options.AddPolicy("ApiScope", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("scope", "zeni");
+    })
+);
+//.AddAuthentication(options =>
+//{
+//    options.DefaultScheme = "cookies";
+//    options.DefaultChallengeScheme = "oidc";
+//})
+//.AddCookie("cookies")
+//.AddOpenIdConnect("oidc", options =>
+//{
+//    options.Authority = "http://localhost:5000";
+//    options.RequireHttpsMetadata = false;
+//    options.ClientSecret = "secret";
+//    options.ClientId = "zeni.services.category";
+//    options.MapInboundClaims = false;
+//    options.SaveTokens = true;
+//    options.Scope.Add("zeni");
+//});
+
+//builder.Services.AddAuthorization(opt =>
+//{
+//    opt.AddPolicy("Admin", policy =>
+//    {
+
+//        policy.RequireClaim("scope", "zeni");
+//    });
+//});
+
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -94,8 +101,7 @@ builder.Services.AddSwaggerGen(c =>
                     Type = ReferenceType.SecurityScheme,
                     Id = "Oauth2",
                 },
-                Scheme = "Oauth2",
-                Name = "Oauth2",
+                Scheme = "Bearer",
                 In = ParameterLocation.Header,
             },
             new List<string>{"zeni"}
@@ -109,12 +115,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Category Api v1");
-        c.OAuthClientId("zeni.services.category");
-        c.OAuthClientSecret("secret");
-    });
+    app.UseSwaggerUI();
+    //app.UseSwaggerUI(c =>
+    //{
+    //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Category Api v1");
+    //    c.OAuthClientId("zeni.services.category");
+    //    c.OAuthClientSecret("secret");
+    //});
 }
 
 app.UseHttpsRedirection();
@@ -124,5 +131,10 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseAllElasticApm(builder.Configuration);
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true) // allow any origin
+    .AllowCredentials()); // allow credentials
 
 app.Run();
