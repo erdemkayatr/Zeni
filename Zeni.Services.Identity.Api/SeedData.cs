@@ -8,6 +8,7 @@ using Serilog;
 using Duende.IdentityServer.Models;
 using Duende.IdentityServer.EntityFramework.DbContexts;
 using Duende.IdentityServer.EntityFramework.Mappers;
+using Duende.IdentityServer;
 
 namespace Zeni.Services.Identity.Api;
 
@@ -28,10 +29,10 @@ public class SeedData
     public static IEnumerable<ApiScope> ApiScopes =>
         new List<ApiScope>
         {
-            new ApiScope("Zeni","Zeni Server"),
+            new ApiScope("zeni","Zeni Server"),
             new ApiScope(name:"read",displayName:"Read Data"),
             new ApiScope(name:"write",displayName:"Write Data"),
-            new ApiScope(name:"delete",displayName:"Delete Data"),
+            new ApiScope(name:"delete",displayName:"Delete Data")
         };
 
     public static IEnumerable<Client> Clients =>
@@ -43,6 +44,20 @@ public class SeedData
                 ClientSecrets = {new Secret("secret".Sha256())},
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
                 AllowedScopes ={"read","write","profile"}
+            },
+            new Client
+            {
+                ClientId="zeni.services.category",
+                ClientSecrets = {new Secret("secret".Sha256())},
+                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                AllowedScopes = new List<string>
+                {
+                    IdentityServerConstants.StandardScopes.OpenId,
+                    IdentityServerConstants.StandardScopes.Email,
+                    IdentityServerConstants.StandardScopes.Profile,
+                    "zeni"
+                }
+
             }
         };
 
@@ -87,6 +102,7 @@ public class SeedData
                 }
                 concontext.SaveChanges();
             }
+      
 
             if (roleMgr.FindByNameAsync(SeedData.Admin).Result == null)
             {

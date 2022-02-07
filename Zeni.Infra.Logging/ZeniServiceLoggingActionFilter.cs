@@ -1,6 +1,4 @@
-﻿
-
-namespace Zeni.Infra.Logging
+﻿namespace Zeni.Infra.Logging
 {
     public class ZeniServiceLoggingActionFilter : IActionFilter
     {

@@ -9,14 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elastic.Apm.AspNetCore" Version="1.13.0" />
+    <PackageReference Include="Elastic.Apm.NetCoreAll" Version="1.13.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.UnitOfWork" Version="3.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Zeni.Infra.Ioc\Zeni.Infra.Ioc.csproj" />
     <ProjectReference Include="..\Zeni.Infra.Logging\Zeni.Infra.Logging.csproj" />
+    <ProjectReference Include="..\Zeni.Services.Category.Application\Zeni.Services.Category.Application.csproj" />
+    <ProjectReference Include="..\Zeni.Services.Category.Persistence\Zeni.Services.Category.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
