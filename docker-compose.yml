@@ -109,7 +109,7 @@ services:
       context: .
       dockerfile: src/Identity/Zeni.Services.Identity.Api/Dockerfile
     networks:
-              - zeni_blog_network
+          - zeni_blog_network
 volumes:
   esdata:
     driver: local
