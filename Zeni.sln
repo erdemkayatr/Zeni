@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Infra.Ioc", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Infra.Logging", "Infrastructure\Zeni.Infra.Logging\Zeni.Infra.Logging.csproj", "{1A019667-DD79-4AEA-B6B4-10F0AAC9E93C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Results", "Zeni.Infra.Results\Zeni.Infra.Results.csproj", "{E2523D1B-1515-48AD-AF60-9F2FDB03074E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Results", "Infrastructure\Zeni.Infra.Results\Zeni.Infra.Results.csproj", "{E2523D1B-1515-48AD-AF60-9F2FDB03074E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
