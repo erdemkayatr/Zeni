@@ -3,14 +3,13 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Zeni.Services.Identity.Api/Zeni.Services.Identity.Api.csproj", "Zeni.Services.Identity.Api/"]
-RUN dotnet restore "Zeni.Services.Identity.Api/Zeni.Services.Identity.Api.csproj"
+COPY ["src/Identity/Zeni.Services.Identity.Api/Zeni.Services.Identity.Api.csproj", "src/Identity/Zeni.Services.Identity.Api/"]
+RUN dotnet restore "src/Identity/Zeni.Services.Identity.Api/Zeni.Services.Identity.Api.csproj"
 COPY . .
-WORKDIR "/src/Zeni.Services.Identity.Api"
+WORKDIR "/src/src/Identity/Zeni.Services.Identity.Api"
 RUN dotnet build "Zeni.Services.Identity.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish

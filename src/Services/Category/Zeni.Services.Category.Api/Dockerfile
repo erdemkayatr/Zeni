@@ -3,14 +3,16 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Zeni.Services.Category.Api/Zeni.Services.Category.Api.csproj", "Zeni.Services.Category.Api/"]
-RUN dotnet restore "Zeni.Services.Category.Api/Zeni.Services.Category.Api.csproj"
+COPY ["src/Services/Category/Zeni.Services.Category.Api/Zeni.Services.Category.Api.csproj", "src/Services/Category/Zeni.Services.Category.Api/"]
+COPY ["src/Services/Category/Zeni.Services.Category.Persistence/Zeni.Services.Category.Persistence.csproj", "src/Services/Category/Zeni.Services.Category.Persistence/"]
+COPY ["src/Services/Category/Zeni.Services.Category.Domain/Zeni.Services.Category.Domain.csproj", "src/Services/Category/Zeni.Services.Category.Domain/"]
+COPY ["src/Services/Category/Zeni.Services.Category.Application/Zeni.Services.Category.Application.csproj", "src/Services/Category/Zeni.Services.Category.Application/"]
+RUN dotnet restore "src/Services/Category/Zeni.Services.Category.Api/Zeni.Services.Category.Api.csproj"
 COPY . .
-WORKDIR "/src/Zeni.Services.Category.Api"
+WORKDIR "/src/src/Services/Category/Zeni.Services.Category.Api"
 RUN dotnet build "Zeni.Services.Category.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
