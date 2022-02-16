@@ -22,21 +22,7 @@ namespace Zeni.Services.Category.Api.Controllers
         [Authorize]
         public async Task<string> GetLog(string log)
         {
-            var categoryRepo = _unitOfWork.GetRepository<Categories>();
-            var isCat = await categoryRepo.GetPagedListAsync();
-            if (isCat.Items.Count < 1)
-            {
-                var cat = new Categories
-                {
-                    CategoryName = "ZeniCategory",
-                    CategoryDescription = "FistCategory Added"
-                };
-                await categoryRepo.InsertAsync(cat);
-                await _unitOfWork.SaveChangesAsync();
-            }
-            var catList = categoryRepo.GetAll();
-
-            return "true";
+            return "";
         }
     }
 

@@ -5,25 +5,25 @@ VisualStudioVersion = 17.1.32104.313
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B9DF4951-E6BA-41E3-A961-A5D55B2EA75D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{C763FD01-28F5-413E-A3DA-CEEBCD38E878}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "src\Identity", "{C763FD01-28F5-413E-A3DA-CEEBCD38E878}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Identity.Api", "src\Identity\Zeni.Services.Identity.Api\Zeni.Services.Identity.Api.csproj", "{C1F69A74-9AF8-49EB-B650-84A1990EFF00}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5B4ACC95-829C-4875-88D9-9F0DAF51506E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "src\Services", "{5B4ACC95-829C-4875-88D9-9F0DAF51506E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Api", "src\Services\Category\Zeni.Services.Category.Api\Zeni.Services.Category.Api.csproj", "{F1F313D8-7ADD-441F-9387-53A926B51824}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Api", "Zeni.Services.Category.Api\Zeni.Services.Category.Api.csproj", "{F1F313D8-7ADD-441F-9387-53A926B51824}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Application", "src\Services\Category\Zeni.Services.Category.Application\Zeni.Services.Category.Application.csproj", "{C3DC25E7-8BB1-485B-8D55-286CF9B545E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Application", "Zeni.Services.Category.Application\Zeni.Services.Category.Application.csproj", "{C3DC25E7-8BB1-485B-8D55-286CF9B545E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Domain", "src\Services\Category\Zeni.Services.Category.Domain\Zeni.Services.Category.Domain.csproj", "{29266EBD-E982-4664-8F88-3D3858EBEDA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Domain", "Zeni.Services.Category.Domain\Zeni.Services.Category.Domain.csproj", "{29266EBD-E982-4664-8F88-3D3858EBEDA2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{A08B5873-01F5-4E55-9109-11BEDC2D6AA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Persistence", "src\Services\Category\Zeni.Services.Category.Persistence\Zeni.Services.Category.Persistence.csproj", "{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Persistence", "Zeni.Services.Category.Persistence\Zeni.Services.Category.Persistence.csproj", "{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3CB59DA2-100F-41F7-B53E-1695AC2C1C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Entity", "src\Infrastructure\Zeni.Infra.Entity\Zeni.Infra.Entity.csproj", "{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Entity", "Zeni.Infra.Entity\Zeni.Infra.Entity.csproj", "{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configs", "configs", "{8423BC1A-E6CB-41E4-8C11-F924978F1045}"
 	ProjectSection(SolutionItems) = preProject
@@ -31,11 +31,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configs", "configs", "{8423
 		configs\logstash.conf = configs\logstash.conf
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Logging", "src\Infrastructure\Zeni.Infra.Logging\Zeni.Infra.Logging.csproj", "{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Logging", "Zeni.Infra.Logging\Zeni.Infra.Logging.csproj", "{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Ioc", "src\Infrastructure\Zeni.Infra.Ioc\Zeni.Infra.Ioc.csproj", "{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Results", "src\Infrastructure\Zeni.Infra.Result\Zeni.Infra.Results.csproj", "{518ED907-8E0D-4927-987E-6310C04A665D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Ioc", "Zeni.Infra.Ioc\Zeni.Infra.Ioc.csproj", "{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,10 +73,6 @@ Global
 		{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{518ED907-8E0D-4927-987E-6310C04A665D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{518ED907-8E0D-4927-987E-6310C04A665D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{518ED907-8E0D-4927-987E-6310C04A665D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{518ED907-8E0D-4927-987E-6310C04A665D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,7 +90,6 @@ Global
 		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
 		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
 		{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
-		{518ED907-8E0D-4927-987E-6310C04A665D} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D94A7DED-25B9-4484-A453-046F71C50628}
