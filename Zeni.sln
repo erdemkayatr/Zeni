@@ -22,8 +22,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Services.Category.Persistence", "src\Services\Category\Zeni.Services.Category.Persistence\Zeni.Services.Category.Persistence.csproj", "{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3CB59DA2-100F-41F7-B53E-1695AC2C1C36}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Entity", "src\Infrastructure\Zeni.Infra.Entity\Zeni.Infra.Entity.csproj", "{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}"
+	ProjectSection(SolutionItems) = preProject
+		Infrastructure\Zeni.Infra.Result\Zeni.Infra.Results.csproj = Infrastructure\Zeni.Infra.Result\Zeni.Infra.Results.csproj
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configs", "configs", "{8423BC1A-E6CB-41E4-8C11-F924978F1045}"
 	ProjectSection(SolutionItems) = preProject
@@ -31,11 +32,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configs", "configs", "{8423
 		configs\logstash.conf = configs\logstash.conf
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Logging", "src\Infrastructure\Zeni.Infra.Logging\Zeni.Infra.Logging.csproj", "{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Infra.Entity", "Infrastructure\Zeni.Infra.Entity\Zeni.Infra.Entity.csproj", "{562A3872-CC71-42B1-A381-8F6F78691E67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Ioc", "src\Infrastructure\Zeni.Infra.Ioc\Zeni.Infra.Ioc.csproj", "{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Infra.Ioc", "Infrastructure\Zeni.Infra.Ioc\Zeni.Infra.Ioc.csproj", "{1996C3C4-7234-47CA-B185-418A1717D733}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Results", "src\Infrastructure\Zeni.Infra.Result\Zeni.Infra.Results.csproj", "{518ED907-8E0D-4927-987E-6310C04A665D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Infra.Logging", "Infrastructure\Zeni.Infra.Logging\Zeni.Infra.Logging.csproj", "{1A019667-DD79-4AEA-B6B4-10F0AAC9E93C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,22 +64,18 @@ Global
 		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{518ED907-8E0D-4927-987E-6310C04A665D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{518ED907-8E0D-4927-987E-6310C04A665D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{518ED907-8E0D-4927-987E-6310C04A665D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{518ED907-8E0D-4927-987E-6310C04A665D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{562A3872-CC71-42B1-A381-8F6F78691E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{562A3872-CC71-42B1-A381-8F6F78691E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{562A3872-CC71-42B1-A381-8F6F78691E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{562A3872-CC71-42B1-A381-8F6F78691E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1996C3C4-7234-47CA-B185-418A1717D733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1996C3C4-7234-47CA-B185-418A1717D733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1996C3C4-7234-47CA-B185-418A1717D733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1996C3C4-7234-47CA-B185-418A1717D733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A019667-DD79-4AEA-B6B4-10F0AAC9E93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A019667-DD79-4AEA-B6B4-10F0AAC9E93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A019667-DD79-4AEA-B6B4-10F0AAC9E93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A019667-DD79-4AEA-B6B4-10F0AAC9E93C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,11 +89,9 @@ Global
 		{29266EBD-E982-4664-8F88-3D3858EBEDA2} = {A08B5873-01F5-4E55-9109-11BEDC2D6AA7}
 		{A08B5873-01F5-4E55-9109-11BEDC2D6AA7} = {5B4ACC95-829C-4875-88D9-9F0DAF51506E}
 		{675E1794-6AC4-4CB9-A7BA-335E256BB5BD} = {A08B5873-01F5-4E55-9109-11BEDC2D6AA7}
-		{3CB59DA2-100F-41F7-B53E-1695AC2C1C36} = {B9DF4951-E6BA-41E3-A961-A5D55B2EA75D}
-		{BD935D3E-88A2-42B8-9FBB-0F9BF9BA4C74} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
-		{0D0BA672-5BA1-4815-B8FF-DD5190E7788E} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
-		{6F508D09-1F47-4C4E-B7AD-DA256C4ECEF1} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
-		{518ED907-8E0D-4927-987E-6310C04A665D} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
+		{562A3872-CC71-42B1-A381-8F6F78691E67} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
+		{1996C3C4-7234-47CA-B185-418A1717D733} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
+		{1A019667-DD79-4AEA-B6B4-10F0AAC9E93C} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D94A7DED-25B9-4484-A453-046F71C50628}
