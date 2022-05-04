@@ -1,0 +1,14 @@
+﻿global using Duende.IdentityServer;
+global using Duende.IdentityServer.EntityFramework.DbContexts;
+global using Duende.IdentityServer.EntityFramework.Mappers;
+global using Duende.IdentityServer.Models;
+global using IdentityModel;
+global using IdentityServerHost.Models;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.EntityFrameworkCore;
+global using Serilog;
+global using System.Reflection;
+global using System.Security.Claims;
+global using Zeni.Services.Identity.Api;
+global using Zeni.Services.Identity.Api.Data;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

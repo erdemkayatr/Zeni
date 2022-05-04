@@ -1,10 +1,3 @@
-using Duende.IdentityServer;
-using Zeni.Services.Identity.Api.Data;
-using IdentityServerHost.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Serilog;
-
 namespace Zeni.Services.Identity.Api;
 
 internal static class HostingExtensions

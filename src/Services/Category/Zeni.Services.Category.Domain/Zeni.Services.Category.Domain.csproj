@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Infrastructure\Zeni.Infra.Entity\Zeni.Infra.Entity.csproj" />
+    <ProjectReference Include="..\..\..\..\Infrastructure\Zeni.Infra.Entity\Zeni.Infra.Entity.csproj" />
   </ItemGroup>
 
 </Project>

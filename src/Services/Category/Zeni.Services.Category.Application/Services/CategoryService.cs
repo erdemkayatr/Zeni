@@ -29,7 +29,7 @@ namespace Zeni.Services.Category.Application.Services
                 await categoryRepo.InsertAsync(cat);
                 await _unitOfWork.SaveChangesAsync();
             }
-            var catList = categoryRepo.GetPagedListAsync();
+            var catList = await categoryRepo.GetPagedListAsync();
             return catList.ToString();
         }
     }

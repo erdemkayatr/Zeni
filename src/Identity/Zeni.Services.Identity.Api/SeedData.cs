@@ -1,14 +1,4 @@
-﻿using System.Security.Claims;
-using IdentityModel;
-using Zeni.Services.Identity.Api.Data;
-using IdentityServerHost.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Serilog;
-using Duende.IdentityServer.Models;
-using Duende.IdentityServer.EntityFramework.DbContexts;
-using Duende.IdentityServer.EntityFramework.Mappers;
-using Duende.IdentityServer;
+﻿
 
 namespace Zeni.Services.Identity.Api;
 

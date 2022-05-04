@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Infrastructure\Zeni.Infra.Entity\Zeni.Infra.Entity.csproj" />
     <ProjectReference Include="..\Zeni.Services.Category.Domain\Zeni.Services.Category.Domain.csproj" />
   </ItemGroup>
 

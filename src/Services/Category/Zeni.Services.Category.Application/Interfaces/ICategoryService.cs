@@ -2,6 +2,6 @@
 {
     public interface ICategoryService
     {
-        string GetCategory(string categoryName);
+        Task<string> GetCategory(string categoryName);
     }
 }

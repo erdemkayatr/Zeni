@@ -1,11 +1,4 @@
-﻿using Zeni.Services.Identity.Api;
-using Serilog;
-using Zeni.Services.Identity.Api.Data;
-using Microsoft.EntityFrameworkCore;
-using IdentityServerHost.Models;
-using Microsoft.AspNetCore.Identity;
-using System.Reflection;
-
+﻿
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .CreateBootstrapLogger();

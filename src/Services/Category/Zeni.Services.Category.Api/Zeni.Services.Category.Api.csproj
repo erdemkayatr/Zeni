@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Infrastructure\Zeni.Infra.Ioc\Zeni.Infra.Ioc.csproj" />
-    <ProjectReference Include="..\..\..\Infrastructure\Zeni.Infra.Logging\Zeni.Infra.Logging.csproj" />
+    <ProjectReference Include="..\..\..\..\Infrastructure\Zeni.Infra.Ioc\Zeni.Infra.Ioc.csproj" />
+    <ProjectReference Include="..\..\..\..\Infrastructure\Zeni.Infra.Logging\Zeni.Infra.Logging.csproj" />
     <ProjectReference Include="..\Zeni.Services.Category.Application\Zeni.Services.Category.Application.csproj" />
     <ProjectReference Include="..\Zeni.Services.Category.Persistence\Zeni.Services.Category.Persistence.csproj" />
   </ItemGroup>

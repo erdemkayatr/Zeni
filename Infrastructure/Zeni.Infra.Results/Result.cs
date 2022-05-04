@@ -5,15 +5,19 @@
         public bool Succeeded { get; set; }
         public string Message { get; set; }
 
-        public static IResult SuccessAsync()
+        public static IResult Success()
         {
             return new Result
             {
                 Succeeded = true,
             };
         }
+        public static Task<IResult> SuccessAsync()
+        {
+            return Task.FromResult(Success());
+        }
 
-        public static new Task<IResult> SuccessAsync(string message)
+        public static Task<IResult> SuccessAsync(string message)
         {
             return Task.FromResult(Success(message));
 
