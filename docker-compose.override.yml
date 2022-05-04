@@ -12,7 +12,8 @@ services:
     ports:
     - 8200:8200
     networks:
-      - zeni_blog_network
+      zeni_blog_network:
+        ipv4_address: 172.18.0.2
     command: >
        apm-server -e
          -E apm-server.rum.enabled=true
@@ -43,7 +44,8 @@ services:
     ports:
     - 9200:9200
     networks:
-    - zeni_blog_network
+      zeni_blog_network:
+        ipv4_address: 172.18.0.3
     healthcheck:
       interval: 20s
       retries: 10
@@ -60,7 +62,8 @@ services:
     ports:
     - 5601:5601
     networks:
-    - zeni_blog_network
+      zeni_blog_network:
+        ipv4_address: 172.18.0.4
     healthcheck:
       interval: 10s
       retries: 20
@@ -73,7 +76,8 @@ services:
     volumes:
       - "esdata:/usr/share/rabbitmqdata/data"
     networks:
-      - zeni_blog_network
+       zeni_blog_network:
+        ipv4_address: 172.18.0.5
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
@@ -85,7 +89,8 @@ services:
       - rabbitmq
       - elasticsearch
     networks:
-      - zeni_blog_network
+     zeni_blog_network:
+        ipv4_address: 172.18.0.6
   sql-server-db:
     container_name: sql-server-db
     image: mcr.microsoft.com/mssql/server:2019-latest
@@ -95,21 +100,24 @@ services:
       SA_PASSWORD: "sa12345?"
       ACCEPT_EULA: "Y"
     networks:
-      - zeni_blog_network
-  zeni.services.category.api:
-    image: ${DOCKER_REGISTRY-}zeniservicescategoryapi
-    build:
-      context: .
-      dockerfile: src/Services/Category/Zeni.Services.Category.Api/Dockerfile
-    networks:
-          - zeni_blog_network
-  zeni.services.identity.api:
-    image: ${DOCKER_REGISTRY-}zeniservicesidentityapi
-    build:
-      context: .
-      dockerfile: src/Identity/Zeni.Services.Identity.Api/Dockerfile
-    networks:
-              - zeni_blog_network
+       zeni_blog_network:
+        ipv4_address: 172.18.0.7
+  #zeni.services.category.api:
+  #  image: ${DOCKER_REGISTRY-}zeniservicescategoryapi
+  #  build:
+  #    context: .
+  #    dockerfile: src/Services/Category/Zeni.Services.Category.Api/Dockerfile
+  #  networks:
+  #     zeni_blog_network:
+  #      ipv4_address: 172.18.0.8
+  #zeni.services.identity.api:
+  #  image: ${DOCKER_REGISTRY-}zeniservicesidentityapi
+  #  build:
+  #    context: .
+  #    dockerfile: src/Identity/Zeni.Services.Identity.Api/Dockerfile
+  #  networks:
+  #     zeni_blog_network:
+  #      ipv4_address: 172.18.0.9
 volumes:
   esdata:
     driver: local
