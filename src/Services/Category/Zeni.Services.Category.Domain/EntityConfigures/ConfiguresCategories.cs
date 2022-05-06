@@ -4,7 +4,7 @@ namespace Zeni.Services.Category.Domain.EntityConfigures
 {
     public  class ConfiguresCategories
     {
-        public static void ConfigureCategories(EntityTypeBuilder<Categories> builder)
+        public static void ConfigureCategories(EntityTypeBuilder<Entities.Categories> builder)
         {
             builder.ToTable("zeni_categories");
             builder.HasKey(p => p.Id);

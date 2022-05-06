@@ -8,7 +8,7 @@ namespace Zeni.Services.Category.Persistence.Contexts
 
         }
 
-        public DbSet<Categories> Categories { get; set; }
+        public DbSet<Domain.Entities.Categories> Categories { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Categories>(ConfiguresCategories.ConfigureCategories);

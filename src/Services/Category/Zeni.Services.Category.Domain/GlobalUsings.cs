@@ -2,3 +2,8 @@
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Zeni.Services.Category.Domain.Entities;
 global using Microsoft.EntityFrameworkCore;
+global using Zeni.Infra.Bus.Commands;
+global using MediatR;
+global using Zeni.Services.Category.Domain.Features.CategoryFeatures.Commands;
+global using Arch.EntityFrameworkCore.UnitOfWork;
+global using Zeni.Services.Category.Domain.Features.CategoryFeatures.Queries;

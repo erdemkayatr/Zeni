@@ -29,11 +29,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Infra.Ioc", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Infra.Logging", "Infrastructure\Zeni.Infra.Logging\Zeni.Infra.Logging.csproj", "{1A019667-DD79-4AEA-B6B4-10F0AAC9E93C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Results", "Infrastructure\Zeni.Infra.Results\Zeni.Infra.Results.csproj", "{E2523D1B-1515-48AD-AF60-9F2FDB03074E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Infra.Results", "Infrastructure\Zeni.Infra.Results\Zeni.Infra.Results.csproj", "{E2523D1B-1515-48AD-AF60-9F2FDB03074E}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{966CC11C-C6E6-4732-9B44-DD49FAA94FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Bus", "Infrastructure\Zeni.Infra.Bus\Zeni.Infra.Bus.csproj", "{4A6CEEF9-3F56-4AAF-B193-23A340A7DD0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zeni.Infra.Bus", "Infrastructure\Zeni.Infra.Bus\Zeni.Infra.Bus.csproj", "{4A6CEEF9-3F56-4AAF-B193-23A340A7DD0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeni.Infra.Caching", "..\Zeni.Infra.Caching\Zeni.Infra.Caching.csproj", "{B21DAEF7-998B-4E37-AB3C-98E45BCBDAC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{4A6CEEF9-3F56-4AAF-B193-23A340A7DD0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A6CEEF9-3F56-4AAF-B193-23A340A7DD0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A6CEEF9-3F56-4AAF-B193-23A340A7DD0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B21DAEF7-998B-4E37-AB3C-98E45BCBDAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21DAEF7-998B-4E37-AB3C-98E45BCBDAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21DAEF7-998B-4E37-AB3C-98E45BCBDAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21DAEF7-998B-4E37-AB3C-98E45BCBDAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +109,7 @@ Global
 		{1A019667-DD79-4AEA-B6B4-10F0AAC9E93C} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
 		{E2523D1B-1515-48AD-AF60-9F2FDB03074E} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
 		{4A6CEEF9-3F56-4AAF-B193-23A340A7DD0A} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
+		{B21DAEF7-998B-4E37-AB3C-98E45BCBDAC4} = {3CB59DA2-100F-41F7-B53E-1695AC2C1C36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D94A7DED-25B9-4484-A453-046F71C50628}
